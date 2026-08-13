@@ -1,23 +1,162 @@
-/* The Thinking Space
-   Typography
-*/
+/* ========================================
+   The Thinking Space
+   Global Styles
+   ======================================== */
+
+/* ---------- Typography ---------- */
 
 :root {
     --font-heading: "Inter", sans-serif;
     --font-body: "Source Serif 4", serif;
-    --font-math: "STIX Two Math", serif;
     --font-code: "JetBrains Mono", monospace;
+
+    --text: #1a1a1a;
+    --muted: #666;
+    --border: #e5e5e5;
+    --background: #ffffff;
+    --surface: #f7f7f7;
+    --accent: #333333;
+}
+
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
 }
 
 body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
     font-family: var(--font-body);
+    line-height: 1.7;
 }
 
-h1, h2, h3, h4, h5, h6,
-nav {
+
+/* ---------- Header ---------- */
+
+header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 2rem;
+}
+
+header h1 {
+    margin: 0;
     font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
 }
 
-code, pre {
+header p {
+    max-width: 650px;
+    margin: 0.75rem 0 2rem;
+    color: var(--muted);
+    font-size: 1.15rem;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- Main Content ---------- */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+}
+
+main h2,
+main h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+main h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+main p {
+    max-width: 720px;
+    font-size: 1.1rem;
+}
+
+
+/* ---------- Links ---------- */
+
+main a {
+    color: inherit;
+}
+
+
+/* ---------- Code ---------- */
+
+code,
+pre {
     font-family: var(--font-code);
+}
+
+code {
+    font-size: 0.9em;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 2.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.05rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    main h2 {
+        font-size: 1.7rem;
+    }
 }
