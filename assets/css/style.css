@@ -1,0 +1,23 @@
+/* The Thinking Space
+   Typography
+*/
+
+:root {
+    --font-heading: "Inter", sans-serif;
+    --font-body: "Source Serif 4", serif;
+    --font-math: "STIX Two Math", serif;
+    --font-code: "JetBrains Mono", monospace;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6,
+nav {
+    font-family: var(--font-heading);
+}
+
+code, pre {
+    font-family: var(--font-code);
+}
