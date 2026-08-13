@@ -1,0 +1,29 @@
+<section class="post-list" aria-labelledby="entries-heading">
+    <div class="post-list__heading">
+        <p class="page-kicker">Latest writing</p>
+        <h2 id="entries-heading">Recent entries</h2>
+    </div>
+
+    {% assign section_posts = site.posts | where: "section", page.section %}
+
+    {% if section_posts.size > 0 %}
+        <div class="post-list__items">
+            {% for post in section_posts %}
+                <article class="post-card">
+                    <p class="post-card__meta">
+                        {{ post.date | date: "%d %B %Y" }}
+                    </p>
+                    <h3>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    {% if post.excerpt %}
+                        <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+                    {% endif %}
+                    <a class="post-card__read" href="{{ post.url | relative_url }}">Read piece →</a>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-state">No writing here yet. The first piece can begin this section.</p>
+    {% endif %}
+</section>
