@@ -284,3 +284,36 @@ pre {
         grid-column: 2;
     }
 }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    border-top: 1px solid var(--border);
+}
+
+.site-footer__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    color: var(--muted);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .site-footer__inner {
+        display: block;
+        padding: 22px 20px;
+    }
+
+    .site-footer__inner span {
+        display: block;
+    }
+
+    .site-footer__inner span + span {
+        margin-top: 8px;
+    }
+}
